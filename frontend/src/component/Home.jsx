@@ -3,12 +3,13 @@ import "swiper/css";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import Products from "./common/Hotels";
-import Productrange from "./common/Offers";
+import Offers from "./common/Offers";
 import axios from "axios";
 import BannerImage from "../assets/img/tbb.jpg";
 import Backimage from "./common/Backimage";
 import Places from "./common/Places";
 import Clients from "./common/Clients";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Home = () => {
 
@@ -70,11 +71,72 @@ const Home = () => {
     elements.forEach((el) => observer.observe(el));
   }, []);
 
+  const services = [
+    {
+      title: "✈ Air Ticketing",
+      description:
+        "Domestic and international flight bookings. Competitive fares with reliable airlines. Assistance with schedule changes and rebooking.",
+    },
+    {
+      title: "🌍 Tour Packages",
+      description:
+        "Domestic tours (Cox’s Bazar and other destinations). International tours (India and selected global destinations). Customized tour packages based on customer needs.",
+    },
+    {
+      title: "🛂 Visa Assistance",
+      description:
+        "Tourist and visit visa processing support. Documentation guidance and application follow-up. Country-specific visa consultancy.",
+    },
+    {
+      title: "🏨 Hotel Reservations",
+      description:
+        "Budget, standard, and premium hotel bookings. Flexible options based on travel plans. Verified accommodation partners.",
+    },
+    {
+      title: "🕋 Hajj & Umrah Services",
+      description:
+        "Complete Umrah packages. Hajj consultancy and guidance. Accommodation and travel coordination.",
+    },
+  ];
+
+
   return (
     <>
       <Header />
       <Backimage />
-      <Productrange />
+      <Offers />
+      
+
+{/* services start */}
+      <section className="py-5 bg-light">
+      <Container>
+        <h2 className="text-center mb-5">Our Services</h2>
+        <Row className="justify-content-center">
+          {services.map((service, idx) => (
+            <Col
+              key={idx}
+              xs={12}
+              md={6}
+              lg={4}
+              className="mb-4 d-flex justify-content-center"
+            >
+              <Card className="service-card border-0 d-flex flex-column h-100 fade" style={{ maxWidth: "350px" }}>
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{service.title}</Card.Title>
+                  <Card.Text className="flex-grow-1">{service.description}</Card.Text>
+                  <Button className="read-more-btn mt-3" variant="primary">
+                    Read More
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </section>
+{/* services end */}
+
+
       <Places />
 
 
@@ -99,7 +161,7 @@ const Home = () => {
       <Clients />
 
 
-
+{/* contact start */}
       <section className="contact-section">
         <div className="container">
           <h2 className="contactTop mb-5 fade text-center">Let's Connect!</h2>
@@ -107,19 +169,19 @@ const Home = () => {
           <div className="row align-items-start">
 
             <div className="col-md-6 mb-4 mb-md-0 fade text-md-start text-center py-5">
-            <h2 className="mb-3 text-white">Why Choose Us?</h2>
-  <p
-    className="text-white"
-    style={{ textAlign: 'justify', maxWidth: '400px' }}
-  >
-    We are committed to delivering the best service and ensuring customer satisfaction.
-    Our experienced team provides personalized solutions, attention to detail, and
-    innovative approaches to meet your needs. Connect with us and experience excellence!
-  </p>
+              <h2 className="mb-3 text-white">Why Choose Us?</h2>
+              <p
+                className="text-white"
+                style={{ textAlign: 'justify', maxWidth: '400px' }}
+              >
+                We are committed to delivering the best service and ensuring customer satisfaction.
+                Our experienced team provides personalized solutions, attention to detail, and
+                innovative approaches to meet your needs. Connect with us and experience excellence!
+              </p>
 
             </div>
 
-            
+
             <div className="col-md-6 fade">
               {success && <p className="text-white">{success}</p>}
               {error && <p className="text-danger">{error}</p>}
@@ -171,7 +233,7 @@ const Home = () => {
         </div>
       </section>
 
-
+{/* contact end */}
 
       <button className="chat-button">💬</button>
 

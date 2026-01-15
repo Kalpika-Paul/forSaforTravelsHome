@@ -21,7 +21,7 @@ const Hotels = () => {
       <Container>
         <h2 className="productTop text-center mb-4">Popular Hotels</h2>
 
-        <Row className="g-4">
+        <Row >
           {hotels.map((hotel, index) => (
             <Col key={index} xs={12} sm={6} md={6} lg={3}>
               <Card className="h-100 cardhover border-0">
