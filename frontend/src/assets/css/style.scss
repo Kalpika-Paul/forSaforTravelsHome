@@ -8,653 +8,388 @@ $secondary-color: #0284FF;
 $tertiary-color: #2F4858;
 
 body {
-    font-family: $primary-font;
-    font-size: 1em;
-    color: $primary-black;
-    font-weight: 500;
+  font-family: $primary-font;
+  font-size: 1em;
+  color: $primary-black;
+  font-weight: 500;
 }
 
 
 
 h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 h3 {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 h4 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 a {
-    text-decoration: none;
-    color: $primary-black;
+  text-decoration: none;
+  color: $primary-black;
 
-    &::hover {
-        color: $primary-color;
-    }
+  &::hover {
+    color: $primary-color;
+  }
 }
 
 .primary-text {
-    color: $primary-color ;
+  color: $primary-color ;
 }
 
 .secondary-text {
-    color: $secondary-color ;
+  color: $secondary-color ;
 }
 
 
 ul {
-    padding-left: 0;
+  padding-left: 0;
 
-    li {
-        list-style: none;
-    }
+  li {
+    list-style: none;
+  }
 }
 
 .container {
-    max-width: 1440px;
+  max-width: 1440px;
 }
 
 
 // ...........navbar start...........
 
-.topbar{
-  background-color: #e82d31;
+.backgrounds {
+  background-color: #528be069;
 }
 
 .navbar-expand-lg {
-  padding: 10px 50px;
+  padding: 10px 2%;
 }
 
-.navbar-nav .nav-link {
-  color: #000 !important;
-  font-weight: 500;
-  font-size: 18px;
-  padding: 0 10px;
+.navbar-nav {
+  .nav-link {
+    color: #ffffffec !important;
+    font-weight: 500;
+    font-size: 18px;
+    // padding: 0 28px;
+  }
 }
 
-.searchbar {
-  width: 500px;
-  max-width: 100%;
+.navbar {
+  .dropdown-toggle {
+    &::after {
+      display: none !important;
+    }
+  }
 }
 
-.form-place {
-  border-radius: 15px;
+.nav-link {
+  .px-2 {
+    button {
+      border-radius: 12px;
+      background-color: #2d40e8;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+  }
 }
 
-.sbtn {
-  border-radius: 15px;
-  background-color: #e82d31;
-  color: #fff;
+@media (max-width: 992px) {
+  .navbar-nav {
+    .nav-link {
+      font-size: 16px;
+    }
+  }
 }
 
-.navbar .dropdown-toggle::after {
-  display: none !important;
+@media (max-width: 576px) {
+  .navbar {
+    >.container {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 5%;
+    }
+  }
+
+  .first-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .logo-img {
+    width: clamp(90px, 20%, 150px);
+    height: auto;
+  }
+
+  .buttons-row {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    button {
+      padding: clamp(3px, 0.5vw, 8px) clamp(6px, 1vw, 12px);
+      font-size: clamp(0.65rem, 1vw, 0.9rem);
+    }
+  }
+
+  .toggle-row {
+    order: 2;
+    margin: 0 auto 10px;
+  }
+
+  .menu-collapse {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-collapse.show.menu-collapse {
+    display: flex !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+
+    .nav-link,
+    .dropdown-item {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+  }
+}
+
+
+@media (max-width: 375px) {
+  .first-row .navbar-brand img {
+    width: 50%;
+    max-width: 180px;
+  }
+
+  .buttons-row button {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .dropdown-item {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+
+
+  .buttons-row button {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.35rem;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .dropdown-item {
+    font-size: 12px;
+  }
+}
+
+// ...........navbar end...........
+
+
+
+// ...........banner start...........
+.sectionThree {
+  overflow: hidden;
+}
+
+.img-banner {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 40px;
+
 }
 
 
 @media (max-width: 576px) {
-
-  .navbar > .container {
-    display: flex;
-    flex-direction: column; /* stack items vertically */
-    align-items: center;    /* center horizontally */
-  }
-
-  .navbar-brand {
-    order: 1;
-    margin-bottom: 10px; /* some spacing below logo */
-  }
-
-  .navbar-toggler {
-    order: 2;
-    margin: 0 auto 10px; /* center toggle button */
-  }
-
-  .searchbar {
-    order: 3;             /* put search below toggle/logo */
-    width: 90%;           /* almost full width */
-    max-width: 350px;     /* optional max width */
-    margin: 0 auto 20px;  /* center horizontally with spacing below */
+  .img-banner {
+    max-width: 100%;
   }
 }
 
-  // ...........navbar end...........
-
-
-
-   // ...........for banner start...........
-   .sectionThree {
-    overflow-x: hidden; 
+.ticket-card {
+  p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.4;
   }
-  
-  .img-banner {
-    width: 100%;
-    max-width: 1200px;  
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  
-  @media (max-width: 576px) {
-    .img-banner {
-      max-width: 100%;
-    }
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  // ...........for slider start...........
 
-  .sectionOne {
-    .swiper {
-      .swiper-wrapper {
-        .swiper-slide {
-          height: 80vh; // desktop default
-  
-          .content {
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-          }
-        }
-      }
-    }
-  }
+}
 
-  @media (max-width: 1200px) {
-    .sectionOne .swiper .swiper-wrapper .swiper-slide {
-      height: 70vh;
-    }
-  }
-  
-
-  @media (max-width: 768px) {
-    .sectionOne .swiper .swiper-wrapper .swiper-slide {
-      height: 60vh;
-    }
-  }
-  
-
-  @media (max-width: 575px) {
-    .sectionOne .swiper .swiper-wrapper .swiper-slide {
-      height: 50vh;
-    }
-  }
-  
-  
-  @media (max-width: 375px) {
-    .sectionOne .swiper .swiper-wrapper .swiper-slide {
-      height: 45vh;
-    }
-  }
-  
-  // ...........for slider end..............
-
-
-//  ........for banner end..............
+//  ........banner end..............
 
 .fade {
   opacity: 0;
-  transform: translateY(20px);       
-  transition: opacity 2s ease-out, transform 2s ease-out;  
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
 .fade.show {
   opacity: 1;
-  transform: translateY(0);          
+  transform: translateY(0);
 }
 
 
-.slide-right {
-  opacity: 0;
-  transform: translateX(100px); 
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
 
-.slide-right.show {
-  opacity: 1;
-  transform: translateX(0);   
-}
+// ........hotels start.........
 
-
- 
-  // ...........category start..............
-   .categoryTop{
-    font-weight: 800;
-    color: $primary-black;
-    
-  }
-.imgcol{
-    position: relative;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-out;
- 
-    
-    &::before{
-       content: '';
-       position: absolute;
-       top: 0;
-       left: 0;
-       width:100%;
-       height: 100%;
-       background-color: #00000063;
-       z-index: 1;
-      
-    }
-
-    &:hover{
-      transform: scale(1.2);
-
-    }
-
-
-}
-  .img-title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #ffffff;
-    font-weight: bold;
-    text-align: center; 
-    font-size: 20px;
-    z-index: 2;
-    padding: 0;
-    pointer-events: none;
-
-    &:hover{
-        font-size: 30px;
-    }
-  }
-
-  @media (max-width: 991px) {
-    .imgcol {
-      width: 90%;      
-    }
-  
-    .imgcol::before {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;       
-    }
-  }
-
-  @media (max-width: 767px) { 
-    .imgcol {
-        width: 100%;          
-        min-height: 150px;    
-      }
-    
-      .imgcol::before {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }                   
-         
-    @media (max-width:1200px) {
-        .imgcol{
-            width: 220px;
-        }
-    }
-
-@media (max-width:1199px) and (max-width:992px) {
-    .imgcol{
-        width: 220px;
-    }
-}
-  
-@media (max-width: 375px) {
-  .imgcol {
-    width: 100%;     
-    min-height: 150px; 
-  }
-
-  .imgcol::before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
-// ...........Category End..............
-
-
-// ........products start.........
-
- 
-.productTop{
+.productTop {
   font-weight: 800;
   font-size: 40px;
 }
 
-.pbtn{
+.pbtn {
   background-color: rgb(11, 161, 225);
   border-radius: 10px;
   color: whitesmoke;
   padding: 10px 50px;
   border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-&:hover{
+.pbtn:hover {
   background-color: #047417;
   color: #ffffff;
 }
+
+.cardhover {
+  transition: transform 0.3s ease-in, box-shadow 0.3s;
 }
 
-.sectionFour {
-  position: relative;
-  overflow-x: hidden;
-
-  .slick-prev,
-  .slick-next {
-    z-index: 10;
-
-    &::before {
-      color: #e82d31 !important;
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .slick-prev {
-      left: 5px;
-    }
-    .slick-next {
-      right: 5px;
-    }
-  }
-
-
-  @media (max-width: 992px) {
-    .slick-prev {
-      left: 8px;
-    }
-    .slick-next {
-      right: 8px;
-    }
-  }
-
-  
-  @media (max-width: 576px) {
-    .slick-prev {
-      left: 5px; 
-    }
-
-    .slick-next {
-      right: 5px; 
-    }
-  }
+.cardhover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 370px) {
-  .slick-prev {
-    left: 2px;
-  }
-  .slick-next {
-    right: 2px;
-  }
-
-  .slick-prev::before,
-  .slick-next::before {
-    font-size: 20px; 
-  }
-}
-
-.cardhover{
-  transition: transform 0.3s ease-in;
-&:hover{
-transform: scale(1.05);
-}
-}
-// ........products end.........
-
-  
-// ........advertise start.........
-
-.sectionFive{
-background-color:#e82d31;
-}
-
-.advertiseTop{
-  font-weight: 800;
-  font-size: 40px;
+.hotel-img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 
-// ........advertise end.........
 
 
-// ...........testimonialstart..............
-.sectionsix {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-  text-align: center;
 
 
-  .testimonial-slider {
-    .slick-slide {
-      transition: transform 0.3s;
-      opacity: 0.6;
-      padding: 0 10px;
-    }
-
-    .slick-center {
-      transform: scale(1.1); 
-      opacity: 1;
-    }
-  }
-
-  .testimonial-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-
-    .feedback {
-      font-style: italic;
-      font-size: 1rem;
-      margin-bottom: 15px;
-      color: #555;
-    }
-
-    .name {
-      font-weight: 600;
-      color: #e82d31;
-    }
-  }
-}
-
-.testimonialTop{
-  font-weight: 800;
-  font-size: 40px;
-}
-
-// ...........Testimonial end..............
-
-// ...........footer start..............
-  footer{
-    background-color: #ffffff;
-
-    h3{
-        color: rgb(0, 0, 0);
-        font-size: 1.5em;
-    }
-    ul{
-        li{
-            a{
-                font-size: 1.2em;
-                color: rgb(0, 0, 0);
-                margin-bottom:10px
-            }
-        }
-    }
-
-
-    .spotlight{
-        border-top: 1px solid rgba($primary-white, 0.2);
-        border-bottom:1px solid rgba($primary-white, 0.2); ;
-    }
-
-    .short-text{
-    color: #37393b;
-        overflow: hidden;
-        text-align: justify;
-        
-    }
-  }  
-  
-  .iconz{
-    transition: transform 0.3s, color 0.3s;
-  &:hover{
-    transform: scale(1.2);
-    color: #000000;  
-  }  
-}
-// ...........Footer end..............
- 
-
-  
-// ...........for news letter start..............
-  .newsletter {
-    background-color: #af612f;
-  
-    .newslet {
-      width: 600px;
-      border-radius: 50px;
-  
-      .form-place {
-        border-radius: 30px;
-      }
-  
-      .subbtn {
-        border-radius: 50px;
-      }
-  
-      
-      @media (max-width: 767px) {
-        width: 100%;                     
-        display: flex;                   
-        align-items: center;             
-        justify-content: center;         
-      }  
-    }
-  }
-  
-  .form-place:focus{
-    outline: none;
-    box-shadow: none;
-}
-
-// ...........for news letter end..............
-
-
-// contact :start
+// ...........contact start...........
 .contact-section {
   padding: 60px 0;
-  background-color: #f5f5f5;
-  text-align: center;
-
-  .container {
-    max-width: 500px;
-    margin: auto;
-  }
-
-
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 2px solid #e82d3000;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-sizing: border-box;
-      resize: vertical;
-      transition: border 0.3s;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: #ff594d00;
-      outline: none;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    button {
-      background-color: #e82d31;
-      color: #fff;
-      font-size: 1rem;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #ff5a4d;
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 40px 15px;
-  }
+  background-color: #00BFFF;
+  text-align: left;
 }
 
+.contact-section .container {
+  max-width: 1200px;
+  margin: auto;
+}
 
-.contactTop{
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e82d3000;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff594d00;
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: #e82d31;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ff5a4d;
+}
+
+.contactTop {
   font-weight: 800;
   font-size: 40px;
+  color: white;
 }
 
-// contact end
-
-
-
-
-
-
-.sectionFive {
-  .fade {
-    transition: all 0.5s ease-in-out;
+@media (max-width: 768px) {
+  .contact-section .row {
+    flex-direction: column;
   }
 
-  img {
-    max-width: 100%;   
-    height: auto;     
-    display: block;
-  }
-
-  .d-flex.gap-3 img {
-    flex: 1;           
-    min-width: 0;     
+  .contact-section .col-md-6 {
+    text-align: center;
   }
 }
 
 
 
+// ...........contact end...........
+
+
+// cta button
 .chat-button {
   position: fixed;
   bottom: 20px;
@@ -669,3 +404,352 @@ background-color:#e82d31;
   cursor: pointer;
   z-index: 9999;
 }
+
+// ...........backimage start...........
+
+.section-1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.search-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.tabs button.active {
+  background: #0d6efd;
+  color: white;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 8px 35px 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  height: 35px;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+  .search-container {
+    padding: 10px 12px;
+  }
+
+  .tabs button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .input-wrapper input {
+    height: 32px;
+    font-size: 12px;
+    padding: 6px 30px 6px 8px;
+  }
+
+  .search-icon {
+    right: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .search-container {
+    padding: 8px 10px;
+  }
+
+  .tabs {
+    gap: 5px;
+  }
+
+  .tabs button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .input-wrapper input {
+    height: 28px;
+    font-size: 11px;
+    padding: 5px 28px 5px 6px;
+  }
+
+  .search-icon {
+    right: 6px;
+  }
+}
+
+// ...........backimage end...........
+
+
+// ...........offer start...........
+
+.sectionTwo {
+  padding: 4rem 0;
+
+  .categoryTop {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .row {
+    gap: 1.5rem;
+  }
+
+  .ticket-card {
+    position: relative;
+    background: #fff;
+    border: 1px dashed #1901018f;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    h5 {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      font-size: 0.875rem;
+      padding: 0.3rem 0.8rem;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      left: -10px;
+    }
+
+    &::after {
+      right: -10px;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .ticket-card {
+      padding: 1rem;
+
+      h5 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+// ...........offers end...........
+
+
+// ...........place start...........
+
+.placeTop {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.places-section {
+  padding: 4rem 0;
+}
+
+.placeTop {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.place-card {
+  position: relative;
+  height: 280px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.1));
+    z-index: 1;
+  }
+}
+
+.place-text {
+  position: relative;
+  z-index: 2;
+  padding: 1.2rem;
+  color: #fff;
+
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  span {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .place-card {
+    height: 240px;
+  }
+}
+
+
+// ...........place end...........
+
+// ...........client start...........
+.clienttop {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+// ...........client end...........
+
+
+
+// ...........footer start..............
+footer {
+  background-color: #ffffff;
+
+  h3 {
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+  }
+
+  ul {
+    li {
+      a {
+        font-size: 1.2em;
+        color: rgb(0, 0, 0);
+        margin-bottom: 10px
+      }
+    }
+  }
+
+
+  .spotlight {
+    border-top: 1px solid rgba($primary-white, 0.2);
+    border-bottom: 1px solid rgba($primary-white, 0.2);
+    ;
+  }
+
+  .short-text {
+    color: #37393b;
+    overflow: hidden;
+    text-align: justify;
+
+  }
+}
+
+.iconz {
+  transition: transform 0.3s, color 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+    color: #000000;
+  }
+}
+
+// ...........footer end..............

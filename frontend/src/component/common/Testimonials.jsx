@@ -1,9 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
-import { Autoplay } from 'swiper/modules';
-import { Container } from 'react-bootstrap'
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 const Testimonials = () => {
 
     const settings = {
