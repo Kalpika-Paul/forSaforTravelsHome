@@ -29,7 +29,7 @@ const Hotels = () => {
                   variant="top"
                   src={hotel.img}
                   alt={hotel.name}
-                  className="hotel-img"
+                  className="hotel-img fade"
                 />
                 <Card.Body className="d-flex flex-column justify-content-between">
                   <div>

@@ -121,7 +121,7 @@ const Home = () => {
 
             
             <div className="col-md-6 fade">
-              {success && <p className="text-success">{success}</p>}
+              {success && <p className="text-white">{success}</p>}
               {error && <p className="text-danger">{error}</p>}
               <form className="contact-form" onSubmit={handleSubmit}>
                 <input
